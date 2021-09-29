@@ -34,7 +34,7 @@ setWoolBlock(mc, x, y, z, "W")
 
 This finds the co-ordinates of your character and then creates a white wool block under your feet. 
 
-**Challenge 1:** Try adding more calls to `setWoolBlock` to create more blocks in different positions. Can you make a horizontal 3x3 square? How about vertical?**
+**Challenge 1:** Try adding more calls to `setWoolBlock` to create more blocks in different positions. Can you make a horizontal 3x3 square? How about vertical?
 
 **Challenge 2:** Try creating some more colours by changing the final parameter to `setWoolBlock` using the table below. Can you make a pattern?
 
