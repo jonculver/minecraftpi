@@ -116,7 +116,7 @@ We need to use two loops. The inner one is the one we already have, to build a s
 ```python
 for dy, row in enumerate(area):
     for dx, colour in enumerate(row):
-        # Create block at position x + dx, y + dy, z with the specified colour 
+        # Create block
 ```
 
 **Hint**: We want to build the flags _downwards_ from the top row
