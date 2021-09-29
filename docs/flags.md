@@ -22,6 +22,8 @@ mc = minecraft.Minecraft.create()
 
 ## Part 1: Creating Wool Blocks
 
+Wool blocks come in a range of colours that are perfect for making flags. We are going to use a helpful utility function called `setWoolBlock` to build a block of a specified colour at a specific (x,y,z) coordinate. 
+
 Add the following code at the bottom of your file and try running it
 
 ```
@@ -117,6 +119,8 @@ for dy, row in enumerate(area):
         # Create block at position x + dx, y + dy, z with the specified colour 
 ```
 
+**Hint**: We want to build the flags _downwards_ from the top row
+
 ![Area](../images/area.png)
 
 ## Part 5: Making Flags
@@ -158,6 +162,6 @@ or even
 FRANCE = ["U" * 6 + "W" * 6 + "R" * 6] * 12
 ```
 
-**Challenge 7:** Which other countries flags do you know? Make some more and scatter your world with giant flags.
+**Challenge 7:** Which other countries' flags do you know? Make some more and scatter your world with giant flags.
 
 ![Flags](../images/flags.png)
