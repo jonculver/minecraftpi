@@ -40,4 +40,4 @@ area = US
 
 for dy, row in enumerate(area):
     for dx, colour in enumerate(row):
-        setWoolBlock(mc, x + dx + 1, y - dy, z, colour)
+        setWoolBlock(mc, x + dx + 1, y + len(area) - dy, z, colour)
