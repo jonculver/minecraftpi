@@ -51,41 +51,15 @@ This finds the co-ordinates of your character and then creates a white wool bloc
 
 ![Pattern](../images/pattern.png)
 
-## Part 2: Using Loops with `range` and `len`
+## Part 2: Loops with `enumerate`
 
 Creating a pattern one block at a time is a slow process. If we want to create a line of blocks we could specify them as a string and then write a function to create them all. For example 5 red blocks would be "RRRRR".
 
-In python a string can be treated as a list of characters so `"RRRRR"` is similar to `["R","R","R","R","R"]`.
+_In python a string can be treated as a list of characters so `"RRRRR"` is similar to `["R","R","R","R","R"]`._
 
-The `len` function gives the length of a list. For example:
+Using a `for` loop we can move through the list and build each block in turn. For each block we need to know both it's colour and it's position in the list so we know where to build it relative to the starting point.
 
-```
->>> list = "RRRRR"
->>> len(list)
-5
-```
-
-The `range` function gives a list of numbers up to a specified value. Like most things in computing it starts from zero. For example:
-
-```
->>> range(5)
-[0, 1, 2, 3, 4]
-```
-
-**Challenge 3:** Fill in the code below to create a row of blocks:
-
-```python
-for i in range(len(list)):
-    # Create block at position x + i with colour list[i]
-```
-
-**Challenge 4:** Can you make a rainbow column like this?
-
-![Rainbow](../images/rainbow.png)
-
-## Part 3: Loops with `enumerate`
-
-In our loop we used both the current element in the list and the *index* of that element (the position within the list where it appears). This is a common pattern and python provides the `enumerate` funtion to do exactly this as shown in this example:
+Python provides the `enumerate` funtion to do exactly this. For each element in the list it gives the index of that element and the element itself as shown in this example:
 
 ```python
 for index, element in enumerate("abc"):
@@ -97,21 +71,32 @@ for index, element in enumerate("abc"):
 2, c
 ```
 
-**Challenge 5:** Rewrite your loop to use `enumerate` instead of `range` and `len`
+**Challenge 3:** Fill in the code below to create a row of blocks:
 
-## Part 4: Moving to Two Dimensions
+```python
+blocks = "RRRRR"
+for i, color in enumerate(blocks):
+    # Create block at position x + i with colour 'color'
+```
+
+**Challenge 4:** How would you make a column instead of a row? Can you make a rainbow column like this?
+
+![Rainbow](../images/rainbow.png)
+
+
+## Part 3: Moving to Two Dimensions
 
 So far we've used one loop to make a row _or_ a column. Now we need to do both, to build a square or a rectangle from a list of strings like this:
 
 ```python
-area = ["WWRWW",
+area = ["WWWWW",
         "RRRRR",
-        "WWRWW"]
+        "OOOOO"]
 ```
 
 We need to use two loops. The inner one is the one we already have, to build a single row of blocks, and the outer one moves along each row in turn.
 
-**Challenge 6:** Fill in the code below so it correctly builds the area as shown below
+**Challenge 5:** Fill in the code below so it correctly builds the area as shown below
 
 ```python
 for dy, row in enumerate(area):
@@ -123,7 +108,7 @@ for dy, row in enumerate(area):
 
 ![Area](../images/area.png)
 
-## Part 5: Making Flags
+## Part 4: Making Flags
 
 Now we are ready to make some really big flags. We could write out an 18x12 England flag like this:
 
