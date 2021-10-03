@@ -18,7 +18,7 @@ Test out the tool by opening and running `examples/draw.py`. You should find a g
 
 ## Drawing your own images
 
-Take a copy of draw.py and try drawing other images. You can use any image saved on your pi or you can try with `images/rainbow.py`.
+Take a copy of draw.py and try drawing other images. You can use any image saved on your pi or you can try with `images/rainbow.png`.
 
 Try making them larger or smaller.
 
