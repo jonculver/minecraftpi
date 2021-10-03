@@ -21,7 +21,6 @@ python examples/hello_world.py
 
 ![Hello World](images/hello_world.png)
 
-
 ## Projects
 
 ### Flags
@@ -29,3 +28,9 @@ python examples/hello_world.py
 Use loops and lists to make giant flags using [These instructions](docs/flags.md)
 
 ![Flags](images/flags.png)
+
+### Drawing
+
+A demonstration of using python image manipulation library to turn a picture into a minecraft object. Check it out [here](docs/draw.md). 
+
+![Massive Raspberry](images/drawn_pi.png)
