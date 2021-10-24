@@ -81,7 +81,7 @@ for i, color in enumerate(blocks):
 
 **Challenge 4:** How would you make a column instead of a row? Can you make a rainbow column like this?
 
-![Rainbow](../images/rainbow.png)
+![Rainbow](../images/rainbow_column.png)
 
 
 ## Part 3: Moving to Two Dimensions

@@ -21,6 +21,13 @@ python examples/hello_world.py
 
 ![Hello World](images/hello_world.png)
 
+4. For some of the projects you need to have the minecraftstuff package which can be installed as follows
+
+```bash
+sudo pip install minecraftstuff
+```
+
+
 ## Projects
 
 ### Flags
