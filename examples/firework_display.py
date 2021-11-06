@@ -15,12 +15,14 @@ x, y, z = mc.player.getPos()
 # A list of active fireworks
 fireworks = []
 
-for i in range(300):
-    # Every few ticks launch another rocket. Leave time at the end for everything to finish
-    if i % 5 == 0 and i < 250:
+TIME = 100
+
+for i in range(TIME):
+    # Every few ticks launch another
+    #  rocket. Leave time at the end for everything to finish
+    if i % 4 == 0 and i < TIME - 30:
         # Create a new rocket in a random position near the player and add it to the list
-        fireworks.append(Firework(mc, x + randint(-20, 20), y,
-                                  z + randint(-20, 20)))
+        fireworks.append(Firework(mc, x + randint(-20, 20), z + randint(-20, 20)))
     
     # Advance every rocket in the list one space. Once done remove them from the list
     for fw in fireworks:

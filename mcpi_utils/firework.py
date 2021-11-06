@@ -1,15 +1,24 @@
 from mcpi import block
 from random import randint
 from minecraftstuff import MinecraftDrawing
+from mcpi_utils.wool import parse_color
 
 
 class Firework():
 
     MAX_RADIUS = 8
 
-    def __init__(self, mc, x, y, z):
+    def __init__(self, mc, x, z, delay=0, color=None, height=None):
         """
-        Create a new firework at coordinates x, y, z
+        Create a new Firework object on the ground at the specified X and Z coordinates
+
+        Args:
+            mc: Minecraft instance in which to create the firework
+            x (int): X coordinate of firework
+            z (int): Z coordinate of firework
+            delay (int, optional): How many ticks to wait before launching. Defaults to 0.
+            color (int or char, optional): Either an integer less than 14 or a letter code. Defaults to random.
+            height (int, optional): The height off the ground to explode. Defaults to random between 20 and 25.
         """
 
         self.mc = mc
@@ -18,18 +27,25 @@ class Firework():
         # Start on the ground
         self.y = mc.getHeight(x, z) + 1
         self.z = z
+        self.delay = delay
         self.draw_rocket()
-        self.height = randint(15, 25)
+        if height is not None:
+            self.height = height
+        else:
+            self.height = randint(20, 25)
         self.radius = 2
-        self.color = randint(0,14)
+        if color is not None:
+            self.color = parse_color(color)
+        else:
+            self.color = randint(0,14)
 
     def draw_rocket(self):
         """
         Draw the rocket at the current coordinates
         """
-        self.mc.setBlock(self.x, self.y + 2, self.z, block.TNT, 1)
+        self.mc.setBlock(self.x, self.y + 2, self.z, block.TNT.id, 1)
         self.mc.setBlocks(self.x, self.y, self.z,
-                          self.x, self.y + 1, self.z, block.FENCE)
+                          self.x, self.y + 1, self.z, block.FENCE.id)
 
     def launch(self):
         """
@@ -60,7 +76,9 @@ class Firework():
         """
         Advance the firework by one tick, either launching or exploding
         """
-        if self.height > 0:
+        if self.delay > 0:
+            self.delay -= 1
+        elif self.height > 0:
             self.launch()            
         elif self.radius < self.MAX_RADIUS:
             self.explode()

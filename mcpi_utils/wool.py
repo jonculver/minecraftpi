@@ -78,6 +78,24 @@ def id_from_letter(letter):
     return result
 
 
+def parse_color(color):
+    """
+    If the color is either a valid enum value or a recognized letter then return it. Otherwise return WHITE
+
+    Args:
+        color (int or string): The color to parse
+    """
+    result = None
+    if isinstance(color, int):
+        result = color
+    elif isinstance(color, str):
+         result = id_from_letter(color)
+
+    if result is None:
+        result = WoolColors.WHITE
+    return result
+
+
 def color_to_rgb(color):
     """
     Return the RGB value of a color
@@ -94,16 +112,4 @@ def setWoolBlock(mc, x, y, z, color=WoolColors.WHITE):
 
     'type' is either a WoolColor enum value or a letter
     """
-    c = None
-    try:
-        c = id_from_letter(color)
-    except:
-        pass
-
-    if c is None:
-        c = color
-
-    if c is not None:
-        mc.setBlock(x, y, z, block.WOOL.id, c)
-    else:
-        mc.setBlock(x, y, z, 0)
+    mc.setBlock(x, y, z, block.WOOL.id, parse_color(color))
