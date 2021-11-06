@@ -30,29 +30,8 @@ for i in range(10):
     rocket = Firework(mc, x + dx, z + dz, delay=delay)
     rockets.append(rocket)
 
-# Second side of a square - increase X
-for i in range(10):
-    dx += 2
-    delay += 2
-    rocket = Firework(mc, x + dx, z + dz, delay=delay)
-    rockets.append(rocket)
-
-# Third side of a square - decrease Z
-for i in range(10):
-    dz -= 2
-    delay += 2
-    rocket = Firework(mc, x + dx, z + dz, delay=delay)
-    rockets.append(rocket)
-
-# Fourth side of a square - decrease X
-for i in range(10):
-    dx -= 2
-    delay += 2
-    rocket = Firework(mc, x + dx, z + dz, delay=delay)
-    rockets.append(rocket)
-
 # Launch Fireworks
-while len(rockets) > 0:
+for i in range(20):
     for r in rockets:
         r.move()
         if r.finished():

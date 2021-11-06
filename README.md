@@ -41,3 +41,9 @@ Use loops and lists to make giant flags using [These instructions](docs/flags.md
 A demonstration of using python image manipulation library to turn a picture into a minecraft object. Check it out [here](docs/draw.md). 
 
 ![Massive Raspberry](images/drawn_pi.png)
+
+### Fireworks
+
+Launch rockets and watch them explode with [these instructions](docs/fireworks.md)
+
+![Fireworks](images/fireworks.png)
