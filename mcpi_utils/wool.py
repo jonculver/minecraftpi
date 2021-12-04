@@ -55,7 +55,7 @@ wool_rgb = {WoolColors.BROWN      : (59,  35,  19 ),
             WoolColors.RED        : (180, 37,  34 ), 
             WoolColors.BLUE       : (27,  36,  110), 
             WoolColors.LIGHT_BLUE : (76,  101, 153), 
-            WoolColors.WHITE      : (200, 200, 200), 
+            WoolColors.WHITE      : (255, 255, 255),
             WoolColors.YELLOW     : (147, 136, 12 )}
 
 
